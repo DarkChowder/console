@@ -4,6 +4,7 @@ client
 		winset(src,null,"reset=true")
 		winset(src,"default","is-maximized=true")
 		world << "<B>[src] has logged in!</B>"
+		world.log << "[src] has logged in!"
 		src << "<font color=blue>Version: [n_version][n_sub]</font>"
 		src << "<font color=red>Welcome to console [n_version][n_sub] -- Click <a href=?changes>here</a> for a list of changes."
 		if (!fexists("saves/players/[src.ckey].sav"))
@@ -43,6 +44,7 @@ client
 			var/savefile/F = new /savefile( "saves/players/[src.ckey].sav" )
 			F << src.mob
 		world << "<B>[src] has logged out!</B>"
+		world.log << "[src] has logged out!"
 		del(src.mob)
 		..()
 
